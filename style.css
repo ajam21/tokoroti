@@ -10,6 +10,8 @@ body {
     background-color: #f2f2f2;
     color: #333;
     margin: 0;
+    font-size: 16px;
+    
 }
 
 header {
@@ -29,12 +31,39 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Untuk layar sedang, card menjadi 50% */
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33.333% - 20px); /* Untuk layar besar, card menjadi 33% */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }
 
 .card {
     background-color: white;
     border-radius: 10px;
+    flex: 1 1 calc(100% - 20px);
+    max-width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
     width: 30%;
@@ -194,11 +223,11 @@ main {
 }
 
 footer {
-    background: #6f3132;
+    background: #733839;
     color: white;
     text-align: center;
-    padding: 25px 0;
-    margin-top: 40px;
+    padding: 2px;
+    margin-top: 30px;
     flex-shrink: 0;
 }
 
@@ -221,4 +250,10 @@ footer .social-icons a:hover {
 
 html {
     scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
 }
